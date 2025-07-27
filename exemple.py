@@ -39,6 +39,18 @@ def main():
             print(f"- {job.get('job_title')} chez {job.get('employer_name')}")
     else:
         print("Erreur lors de la requête:", response.status_code)
+def resultats(offre):
+    if not offre:
+        print("aucun resultat trouver.")
+        return
+    for i , offre in enumerate(offre[:5],1):
+        print(f"\n offre{i}")
+        print("poste:", offre.get("Titre du poste","N/A"))
+        print("Entreprise:",offre.get("nom de l'entreprise","N/A"))
+        print("Localisation:",offre.get("Lieu du travail","N/A"))
+        print("Type de contrat:",offre.get("typr de contrat","N/A"))
+        print("Description:",offre.get("bref_resume","N/A")[:100]+"...")
+    
 
 if __name__ == "__main__":
     main()

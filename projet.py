@@ -21,7 +21,7 @@ countries = {
     "3" ; "ae"
 }
 #choix du pays
- def choisir_pays():
+def choisir_pays():
     print("choisir un pays :")
     for code ,nom in countries.items():
         print(f"{code} {nom}")
